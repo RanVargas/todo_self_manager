@@ -1,6 +1,14 @@
 [build]
 target = "./index.html"
 
+[[hooks]]
+stage = "build"
+command = "powershell"
+command_arguments = [
+    "-Command",
+    "npx tailwindcss -i src/tailwind.css -o \"$env:TRUNK_STAGING_DIR/tailwind.css\""
+]
+
 [watch]
 ignore = ["./src-tauri"]
 

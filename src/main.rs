@@ -1,6 +1,6 @@
 mod app;
 mod components;
-mod helper;
+mod helpers;
 
 use app::App;
 

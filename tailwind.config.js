@@ -1,12 +1,17 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.rs"],
+  content: [
+      "./src/**/*.rs",
+      "./src/**/*.{rs,html}",   // includes components
+      "./src/**/**/*.rs",       // ensures deeper dirs
+      "./index.html"
+  ],
   presets: [],
   darkMode: "media", // or 'class'
   theme: {
-    accentColor: ({ theme }) => ({
-      ...theme("colors"),
-      auto: "auto",
-    }),
   },
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+  ]
 };

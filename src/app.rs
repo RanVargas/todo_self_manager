@@ -1,13 +1,15 @@
 use gloo_timers::callback::Timeout;
 use serde::{Deserialize, Serialize};
 use serde_wasm_bindgen::to_value;
-use wasm_bindgen::prelude::*;
+use wasm_bindgen::{prelude::*};
 use wasm_bindgen_futures::spawn_local;
 use yew::prelude::*;
+use yew::{html, use_effect_with_deps};
+
 
 use crate::{
     components::{timer_controls::TimerControls, timer_display::TimerDisplay},
-    helper::format_time,
+    helpers::format_time,
 };
 
 #[wasm_bindgen]
@@ -90,7 +92,7 @@ pub fn app() -> Html {
     );
 
     html! {
-        <div class={classes!("flex", "flex-col", "items-center", "justify-center", "h-screen")}>
+        <div class={classes!("text-red-200", "flex", "flex-col", "items-center", "justify-center", "h-screen", "bg-red-50")}>
           <TimerDisplay session_length={session_length.clone()} timer_state={timer_state.clone()} timer_duration={timer_duration.clone()} />
           <TimerControls session_length={session_length.clone()} timer_state={timer_state.clone()} timer_duration={timer_duration.clone()} />
         </div>
