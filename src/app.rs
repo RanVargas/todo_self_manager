@@ -92,9 +92,14 @@ pub fn app() -> Html {
     );
 
     html! {
+        //class="text-red-200 flex flex-col items-center justify-center h-screen bg-red-50"
+        //<div class={classes!("text-red-200", "flex", "flex-col", "items-center", "justify-center", "h-screen", "bg-red-50")}>
         <div class={classes!("text-red-200", "flex", "flex-col", "items-center", "justify-center", "h-screen", "bg-red-50")}>
           <TimerDisplay session_length={session_length.clone()} timer_state={timer_state.clone()} timer_duration={timer_duration.clone()} />
           <TimerControls session_length={session_length.clone()} timer_state={timer_state.clone()} timer_duration={timer_duration.clone()} />
+            <div class="text-red-200 flex flex-col items-center justify-center h-screen bg-red-50">
+                <h2>{"Settings"}</h2>
+            </div>
         </div>
     }
 }
